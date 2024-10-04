@@ -52,16 +52,16 @@ const ProblemsCollection: EntityCollection = {
       propertyConfig: "select",
       enumValues: [
         {
-          label: "Easy",
           id: "Easy",
+          label: "Easy",
         },
         {
-          id: "Medium",
           label: "Medium",
+          id: "Medium",
         },
         {
-          id: "Difficulty",
           label: "Difficulty",
+          id: "Difficulty",
         },
       ],
     },
@@ -80,21 +80,16 @@ const ProblemsCollection: EntityCollection = {
           label: "Basic",
         },
         {
-          id: "Array",
           label: "Array",
+          id: "Array",
+        },
+        {
+          label: "Math",
+          id: "Math",
         },
       ],
     },
-    score: {
-      validation: {
-        required: true,
-        positive: true,
-        integer: true,
-      },
-      dataType: "number",
-      name: "分數",
-      description: "該題分數",
-    },
+
     totalTimes: {
       validation: {
         required: true,
@@ -105,28 +100,28 @@ const ProblemsCollection: EntityCollection = {
       description: "該題可以提式的最高次數",
     },
     starterFunctionName: {
+      hideFromCollection: true,
+      propertyConfig: "key_value",
       properties: {
         py: {
-          dataType: "string",
-          editable: true,
-          name: "Py",
           description: "呼叫函式的名稱",
           defaultValue: "def  FUNCTION_NAME(",
+          name: "Py",
+          editable: true,
+          dataType: "string",
         },
         js: {
-          dataType: "string",
-          name: "Js",
           editable: true,
+          name: "Js",
           defaultValue: "function FUNCTION_NAME(",
+          dataType: "string",
         },
       },
-      dataType: "map",
-      name: "Starterfunctionname",
-      description: "運行程式的函式名稱",
       keyValue: true,
+      dataType: "map",
+      description: "運行程式的函式名稱",
       readOnly: false,
-      propertyConfig: "key_value",
-      hideFromCollection: true,
+      name: "Starterfunctionname",
     },
     problemStatement: {
       dataType: "string",
@@ -137,36 +132,43 @@ const ProblemsCollection: EntityCollection = {
       markdown: true,
       name: "敘述",
       description: "題目敘述",
+      defaultValue: `      ### 範例 1:
+>**輸入:** a = 6 , b = 4
+>
+>**輸出:** 2
+
+      `,
     },
-    diffmode: {
-      name: "Diffmode",
-      dataType: "string",
-      description:
-        "在使用 diff highlight 若輸出值會有換行則用 line 否則用 block ",
-      hideFromCollection: true,
-      validation: {
-        required: true,
-      },
-      enumValues: [
-        {
-          label: "line",
-          id: "line",
-        },
-        {
-          id: "block",
-          label: "block",
-        },
-      ],
-      defaultValue: "line",
-      propertyConfig: "select",
-    },
+    // diffmode: {
+    //   validation: {
+    //     required: true,
+    //   },
+    //   name: "Diffmode",
+    //   defaultValue: "line",
+    //   dataType: "string",
+    //   description:
+    //     "在使用 diff highlight 若輸出值會有換行則用 line 否則用 block ",
+    //   propertyConfig: "select",
+    //   hideFromCollection: true,
+    //   enumValues: [
+    //     {
+    //       label: "line",
+    //       id: "line",
+    //     },
+    //     {
+    //       id: "block",
+    //       label: "block",
+    //     },
+    //   ],
+    // },
     starterCode: {
       properties: {
         py: {
           dataType: "string",
           name: "Py",
           editable: true,
-          defaultValue: "def FUNCTION_NAME():   # Write your code here",
+          defaultValue: `def FUNCTION_NAME(a,b):
+              # Write your code here`,
           multiline: true,
           propertyConfig: "multiline",
         },
@@ -174,7 +176,22 @@ const ProblemsCollection: EntityCollection = {
           dataType: "string",
           editable: true,
           name: "Js",
-          defaultValue: "function FUNCTION_NAME(){  // Write your code here  }",
+          defaultValue: `function FUNCTION_NAME(a,b){  
+                // Write your code here  
+            }`,
+          propertyConfig: "multiline",
+          multiline: true,
+        },
+        vb: {
+          dataType: "string",
+          editable: true,
+          name: "Vb",
+          defaultValue: `Public Sub FUNCTION_NAME()                 
+    ' Write your code here
+      
+End Function`,
+          propertyConfig: "multiline",
+          multiline: true,
         },
       },
       dataType: "map",
@@ -280,6 +297,16 @@ const ProblemsCollection: EntityCollection = {
       },
       description: "該題目所展示的範例輸入輸出",
       resolvedProperties: [],
+    },
+    isPublished: {
+      name: "isPublished",
+      dataType: "boolean",
+      propertyConfig: "switch",
+      description: "該問題是否在前台發布",
+      validation: {
+        required: true,
+      },
+      defaultValue: false,
     },
   },
   subcollections: [],

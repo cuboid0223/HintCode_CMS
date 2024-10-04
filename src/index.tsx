@@ -3,10 +3,18 @@ import { SampleEntityView } from "./entity_views/SampleEntityView";
 import { demoCollection } from "./collections/demo";
 import ProblemsCollection from "./collections/problems";
 import UsersCollection from "./collections/users";
+import UnitsCollection from "./collections/units";
+import { ProblemGroupsCollection } from "./collections/problemGroup";
 
 const appConfig: FireCMSAppConfig = {
   version: "1",
-  collections: [demoCollection, ProblemsCollection, UsersCollection],
+  collections: [
+    demoCollection,
+    ProblemsCollection,
+    UsersCollection,
+    UnitsCollection,
+    ProblemGroupsCollection,
+  ],
   propertyConfigs: [
     {
       name: "String with color",

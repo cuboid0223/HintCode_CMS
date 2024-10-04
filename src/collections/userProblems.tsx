@@ -11,10 +11,10 @@ const UserProblemsCollection: EntityCollection = {
   icon: "hub",
   group: "",
   properties: {
-    name: {
-      dataType: "string",
-      name: "Name",
-    },
+    // name: {
+    //   dataType: "string",
+    //   name: "Name",
+    // },
     id: {
       dataType: "string",
       name: "Id",
@@ -39,13 +39,13 @@ const UserProblemsCollection: EntityCollection = {
       description: "請求提示的剩餘次數",
       defaultValue: 20,
     },
-    score: {
-      dataType: "number",
-      name: "得分",
-      description: "該題得分(剩餘次數 * 該題總分 / 總次數)",
-      defaultValue: 10,
-      readonly: true,
-    },
+    // score: {
+    //   dataType: "number",
+    //   name: "得分",
+    //   description: "該題得分(剩餘次數 * 該題總分 / 總次數)",
+    //   defaultValue: 10,
+    //   readonly: true,
+    // },
     is_solved: {
       defaultValue: false,
       description: "該題目是否通過所有測試資料",
