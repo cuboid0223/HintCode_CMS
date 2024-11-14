@@ -5,6 +5,8 @@ import ProblemsCollection from "./collections/problems";
 import UsersCollection from "./collections/users";
 import UnitsCollection from "./collections/units";
 import { ProblemGroupsCollection } from "./collections/problemGroup";
+import GroupsCollection from "./collections/groups";
+import SettingsCollection from "./collections/settings";
 
 const appConfig: FireCMSAppConfig = {
   version: "1",
@@ -14,6 +16,8 @@ const appConfig: FireCMSAppConfig = {
     UsersCollection,
     UnitsCollection,
     ProblemGroupsCollection,
+    GroupsCollection,
+    SettingsCollection,
   ],
   propertyConfigs: [
     {

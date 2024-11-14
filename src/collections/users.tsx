@@ -29,6 +29,11 @@ const UsersCollection: EntityCollection = {
         required: true,
       },
     },
+    role: {
+      dataType: "string",
+      name: "Role",
+      defaultValue: "user",
+    },
     displayName: {
       dataType: "string",
       validation: {

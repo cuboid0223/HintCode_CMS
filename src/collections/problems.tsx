@@ -89,6 +89,88 @@ const ProblemsCollection: EntityCollection = {
         },
       ],
     },
+    testCode: {
+      properties: {
+        py: {
+          resolvedProperties: [],
+          name: "Py",
+          of: {
+            editable: true,
+            resolved: true,
+            fromBuilder: false,
+            dataType: "map",
+            name: "Py",
+            properties: {
+              isHidden: {
+                defaultValue: false,
+                editable: true,
+                dataType: "boolean",
+                propertyConfig: "switch",
+                name: "isHidden",
+              },
+              output: {
+                name: "output",
+                propertyConfig: "text_field",
+                dataType: "string",
+                editable: true,
+              },
+              inputCode: {
+                editable: true,
+                dataType: "string",
+                propertyConfig: "text_field",
+                name: "inputCode",
+              },
+            },
+            propertiesOrder: ["inputCode", "isHidden", "output"],
+          },
+          resolved: true,
+          fromBuilder: false,
+          editable: true,
+          dataType: "array",
+        },
+        vb: {
+          name: "Vb",
+          of: {
+            editable: true,
+            name: "Vb",
+            dataType: "map",
+            resolved: true,
+            fromBuilder: false,
+            propertiesOrder: ["inputCode", "isHidden", "output"],
+            properties: {
+              output: {
+                editable: true,
+                name: "output",
+                dataType: "string",
+                propertyConfig: "text_field",
+              },
+              inputCode: {
+                name: "inputCode",
+                dataType: "string",
+                editable: true,
+                propertyConfig: "text_field",
+              },
+              isHidden: {
+                editable: true,
+                dataType: "boolean",
+                propertyConfig: "switch",
+                defaultValue: false,
+                name: "isHidden",
+              },
+            },
+          },
+          resolvedProperties: [],
+          editable: true,
+          dataType: "array",
+          resolved: true,
+          fromBuilder: false,
+        },
+      },
+      name: "Testcode",
+      dataType: "map",
+      spreadChildren: false,
+      description: "支援多語言的測試資料",
+    },
 
     totalTimes: {
       validation: {
